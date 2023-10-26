@@ -1,0 +1,65 @@
+@import "@/styles";
+
+.card {
+  display: flex;
+  flex-direction: column;
+
+  border-radius: 1.25rem;
+  background: var(--white-color);
+  padding: 4.37rem 2rem;
+  width: 100%;
+
+  @include for-desktop-down {
+    border-radius: 0.625rem;
+  }
+
+  .title {
+    font-size: 2.625rem;
+    color: var(--navy);
+    line-height: 2.8875rem;
+    font-weight: 700;
+    margin-bottom: 1.4rem;
+  }
+
+  .content {
+    color: var(--text-color);
+    font-size: 1.125rem;
+    line-height: 1.9125rem;
+    font-weight: 400;
+    white-space: pre-line;
+    margin-bottom: 2.15rem;
+  }
+
+  .date_time {
+    display: flex;
+    justify-content: space-between;
+    color: var(--light-blue);
+    font-size: 1.25rem;
+    font-weight: 400;
+  }
+
+  .date, .time {
+    display: flex;
+    align-items: center;
+    column-gap: 0.63rem;
+  }
+
+  .content_date_time {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
+}
+
+.isImportant {
+  background-color: var(--navy);
+
+  & > .content_date_time > .content {
+    color: var(--grey);
+  }
+
+  & > .title {
+    color: var(--white-color);
+  }
+}

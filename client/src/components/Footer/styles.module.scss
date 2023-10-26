@@ -1,0 +1,18 @@
+@import "@/styles";
+
+footer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 1.56rem 2.5rem;
+  background-color: var(--navy);
+  color: var(--white-color);
+
+  @include for-big-desktop-down {
+    padding: 1.56rem 1.25rem;
+  }
+
+  @include for-desktop-down {
+    padding: 2.81rem 1.25rem 1.38rem;
+  }
+}

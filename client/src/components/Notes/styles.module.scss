@@ -1,0 +1,19 @@
+@import "@/styles";
+
+.notes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  gap: 5rem 2.4rem;
+  margin-bottom: 3.75rem;
+
+  @include for-big-desktop-down() {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.87rem 1.38rem;
+  }
+
+  @include for-desktop-down {
+    grid-template-columns: 1fr;
+    row-gap: 1.25rem;
+  }
+}

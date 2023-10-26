@@ -1,0 +1,48 @@
+@import "vars.scss";
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  font-family: 'Nunito', sans-serif;
+  scroll-behavior: smooth;
+  scrollbar-color: var(--navy) transparent;
+}
+
+body {
+  background-color: var(--body-background-color);
+}
+
+h1 {
+  color: var(--navy);
+  font-size: 7rem;
+  font-weight: 700;
+}
+
+@keyframes show {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: var(--navy);
+}
+
+@mixin for-big-desktop-down {
+  @media (max-width: 1920px) { @content; }
+}
+
+@mixin for-desktop-down {
+  @media (max-width: 1024px) { @content; }
+}
