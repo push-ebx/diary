@@ -6,6 +6,7 @@ import {Popup} from "@/components/Popup/index.jsx";
 import {useEffect, useState} from "react";
 import axios from "axios"
 
+export const URL = 'https://diary-y649.vercel.app'
 const App = () => {
   const [popupIsOpen, setPopupIsOpen] = useState(false)
   const [notes, setNotes] = useState([])
@@ -28,12 +29,12 @@ const App = () => {
   }, [filter, activePage])
 
   const fetchCountNotes = async () => {
-    const res = await axios.get(`http://localhost:5000/api/getCountNotes`)
+    const res = await axios.get(`${URL}/api/getCountNotes`)
     setCountPages(Math.ceil(res.data/countOnPage))
   }
 
   const fetchNotes = async () => {
-    const res = await axios.get(`http://localhost:5000/api/getNotes?offset=${(activePage-1)*countOnPage}&count=${countOnPage}&latest=${filter}`)
+    const res = await axios.get(`${URL}/api/getNotes?offset=${(activePage-1)*countOnPage}&count=${countOnPage}&latest=${filter}`)
     setNotes(prev => res.data)
   }
 
@@ -41,7 +42,7 @@ const App = () => {
 
   const onShowMore = async () => {
     setIsShowMore(true)
-    const res = await axios.get(`http://localhost:5000/api/getNotes?offset=${(activePage)*countOnPage}&count=${countOnPage}&latest=${filter}`)
+    const res = await axios.get(`${URL}/api/getNotes?offset=${(activePage)*countOnPage}&count=${countOnPage}&latest=${filter}`)
     setNotes(prev => [...prev, ...res.data])
     setCountPages(prev => prev - 1)
     setActivePage(prev => prev + 1)

@@ -6,6 +6,7 @@ import {Textarea} from "@/components/Textarea";
 import {Button} from "@/components/Button";
 import {useEffect, useState} from "react";
 import axios from "axios";
+import {URL} from '@/components/App'
 
 const Popup = ({isOpen, onClose, newNote}) => {
   const [title, setTitle] = useState('')
@@ -29,7 +30,7 @@ const Popup = ({isOpen, onClose, newNote}) => {
     }
     console.log(note)
 
-    const res = await axios.post('http://localhost:5000/api/createNote', note)
+    const res = await axios.post(`${URL}/api/createNote`, note)
 
     newNote(note)
     onClose()
