@@ -25,6 +25,7 @@ const App = () => {
       setIsShowMore(false)
       return
     }
+    fetchCountNotes()
     fetchNotes()
   }, [filter, activePage])
 
