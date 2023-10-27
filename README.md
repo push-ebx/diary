@@ -11,19 +11,15 @@
 
 Последовательность команд для запуска:
     
-```cd client```
-
-```npm install```
-
-```cd ../server```
-
-```npm install```
-
-```cd ..```
-
-```npm install```
-
-```npm run dev```
+```
+cd client
+npm install
+cd ../server
+npm install
+cd ..
+npm install
+npm run dev
+```
 
 Ссылка на [сервер](https://diary-y649-push-ebx.vercel.app)
 
