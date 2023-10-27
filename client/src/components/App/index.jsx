@@ -6,7 +6,7 @@ import {Popup} from "@/components/Popup/index.jsx";
 import {useEffect, useState} from "react";
 import axios from "axios"
 
-export const URL = 'https://diary-y649.vercel.app'
+export const URL = 'http://localhost:5000'
 const App = () => {
   const [popupIsOpen, setPopupIsOpen] = useState(false)
   const [notes, setNotes] = useState([])
